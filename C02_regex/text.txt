@@ -1,0 +1,2 @@
+re — Regular expression operations — Python 3.9.6 documentation
+@media only screen { table.full-width-table { width: 100%; } }
