@@ -3,7 +3,7 @@ from modul1 import func1
 
 print(80*"#")
 
-func1("Emanuel")
+func1("Emanuel") 
 
 print(80*"#")
 
