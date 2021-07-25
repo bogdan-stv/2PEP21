@@ -7,7 +7,7 @@ from contextlib import contextmanager
 from time import time
 import matplotlib.pyplot as plt
 
-x, l_x, l_y = 0, [], []
+x, l_x, l_y = 1, [], []
 @contextmanager
 def timing():
     global x
@@ -18,7 +18,7 @@ def timing():
         # time to execute
         end_time = time() - start_time
         # display the graph
-        l_x.append(x+1), l_y.append(end_time)
+        l_x.append(x), l_y.append(end_time)
         plt.plot(l_x, l_y)
         plt.title("Execution time")
         plt.ylabel("time to execute")
