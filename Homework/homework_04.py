@@ -20,6 +20,9 @@ def timing():
         # display the graph
         l_x.append(x+1), l_y.append(end_time)
         plt.plot(l_x, l_y)
+        plt.title("Execution time")
+        plt.ylabel("time to execute")
+        plt.xlabel("instance")
         plt.show()
         x += 1
 
