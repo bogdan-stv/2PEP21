@@ -1,14 +1,15 @@
-
 import random
 import threading
 import socket
 from threading import Thread
+
 
 def is_prime(number):
     for i in range(2, number):
         if (number % i) == 0:
             return False
     return True
+
 
 def primes(limit):
     result = []
@@ -17,21 +18,23 @@ def primes(limit):
             result.append(i)
     return result
 
+
 class AlreadySetError(Exception):
     pass
+
 
 class Connector():
     __shared_secret = None
     __local_secret = None
 
     def __init__(self, host, port):
-            self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.host = host
-            self.port = port
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.host = host
+        self.port = port
 
     def generate_prime(self):
         primes_list = list(filter(lambda no: True if no > 129 else False, primes(256)))
-        self.prime  = primes_list[random.randint(0, len(primes_list) - 1)]
+        self.prime = primes_list[random.randint(0, len(primes_list) - 1)]
         self.prime = random.choice(primes_list)
 
     def get_prime(self, prime):
@@ -42,7 +45,7 @@ class Connector():
 
     def generate_base(self):
         if getattr(self, "prime", False):
-            self.base = random.randint(2,self.prime- 1)
+            self.base = random.randint(2, self.prime - 1)
         else:
             raise AttributeError('Value for prime needs to be set first')
 
@@ -62,6 +65,7 @@ class Connector():
         self.__shared_secret = pow(secret, self.__local_secret) % self.prime + 129
         print(self.__shared_secret)
 
+
 class Client(Connector):
     def start(self):
         self.sock.connect((self.host, self.port))
@@ -69,6 +73,20 @@ class Client(Connector):
         self.sock.send(bytes(str(self.prime), encoding='UTF-8'))
         message = str(self.sock.recv(4096), encoding='UTF-8')
         print('Client ' + message)
+        if message=='okay':
+            self.generate_base()
+            self.sock.send(bytes(str(self.base), encoding='UTF-8'))
+        message = str(self.sock.recv(4096), encoding='UTF-8')
+        print('Client ' + message)
+        if message=='okay':
+            msg = self.generate_local_secret()
+            self.sock.send(bytes(str(msg), encoding='UTF-8'))
+        message = str(self.sock.recv(4096), encoding='UTF-8')
+        if message:
+            self.get_secret(int(message))
+
+
+
 
 class Server(Connector):
 
@@ -88,7 +106,17 @@ class Server(Connector):
             message = str(connection.recv(4096), encoding='UTF-8')
             print('Server ' + message)
             self.prime = int(message)
-            connection.send(bytes('okey' , encoding='UTF-8'))
+            connection.send(bytes('okay', encoding='UTF-8'))
+            message = str(connection.recv(4096), encoding='UTF-8')
+            print('Server ' + message)
+            self.base=int(message)
+            connection.send(bytes('okay', encoding='UTF-8'))
+            message = self.generate_local_secret()
+            connection.send(bytes(str(message), encoding='UTF-8'))
+            message = str(connection.recv(4096), encoding='UTF-8')
+            if message:
+                self.get_secret(int(message))
+
 
     def stop(self):
         self.th1.join()
@@ -100,9 +128,9 @@ if __name__ == '__main__':
     client.start()
     server.stop()
 
-    client.generate_base()
-    server.get_base(client.base)
-    ss = server.generate_local_secret()
-    cs = client.generate_local_secret()
-    client.get_secret(ss)
-    server.get_secret(cs)
+    # client.generate_base()
+    # server.get_base(client.base)
+    # ss = server.generate_local_secret()
+    # cs = client.generate_local_secret()
+    # client.get_secret(ss)
+    # server.get_secret(cs)
