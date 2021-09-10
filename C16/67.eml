@@ -1,0 +1,162 @@
+Delivered-To: pinkiwinkiwinki555@gmail.com
+Received: by 2002:a9d:6001:0:0:0:0:0 with SMTP id h1csp478325otj;
+        Thu, 9 Sep 2021 09:58:49 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxgSzILwpM6RgxxRqG3m/CgaqmGY0TPsSBPtIE2OWA++8a7961G8TgS2yAVCrIoZ71TDJQv
+X-Received: by 2002:a17:906:d20a:: with SMTP id w10mr4642043ejz.426.1631206728912;
+        Thu, 09 Sep 2021 09:58:48 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1631206728; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=jspi3kLVZ4mUM09xFohpz1fCKmacwRjQ7nh7+UUUGsr4ScBdrQBEFrKMdh1I6GpodG
+         KhUjku/X3lYrIwwU+7zEuTBEURvIo0wJlYIK5acc28nrggZoajjO2AA/nh5DQVarE9t9
+         j7pZHTktvQcgl9G1ePw9fVECTjqisXSaArvwqVVNyYf+qSrxLrt5+iTlsUVCwS3G9N9e
+         UFaEtCD8paq08ZPUVZny/daMYLr/033p+XuZy6XztbqCeSNdG5uYreLhAUKmC/8XXTic
+         iqFEe3ocSWduJDr+NQjOQFaRgwB2F8WiIkwKdiiTPyeBnsmikJ5wdsaQ+CX9bPAisqee
+         LK0g==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from:dkim-signature;
+        bh=cy9zXqYtwn97XH/4qnyKDhD1GvaDg4mY+Dq5dTijmSU=;
+        b=jTqFYHpocPR5n9wJEmVIiS4jaHvEWFPwSlO2EywEORFHxUxCU6ppr2s/rWnuV9I6sC
+         CfMAVCNWCrOHp+dOqzBmdCCgZ8ciMjqcOOq3/Cyg3DA6YFCp0TsNyWrgTDwLCdQJkRxz
+         U7QI3qm+KL9YZ9Wq3zhRTZU6QXOzxAu8eEnTe6YsQHq6FHw4Ozw9TcNWBuzKR+dxqtz0
+         YIr4ft6iSo+iPAFIlz5bVRfCf49K4BfZMwIovaajBjeFxZ0pWhAUtekOqAbY0oMPLq+m
+         hzxgDH8CkVaId2I1DwZMgvzg7WtO/bhXtDBtbUBIA/rAfsTGO1209DVTpc4635herrWc
+         Ui/A==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@hotmail.com header.s=selector1 header.b=sHoMOBxd;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of ozy24us@hotmail.com designates 40.92.72.83 as permitted sender) smtp.mailfrom=ozy24us@hotmail.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hotmail.com
+Return-Path: <ozy24us@hotmail.com>
+Received: from EUR03-VE1-obe.outbound.protection.outlook.com (mail-oln040092072083.outbound.protection.outlook.com. [40.92.72.83])
+        by mx.google.com with ESMTPS id o9si2366943edt.384.2021.09.09.09.58.48
+        for <pinkiwinkiwinki555@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 09 Sep 2021 09:58:48 -0700 (PDT)
+Received-SPF: pass (google.com: domain of ozy24us@hotmail.com designates 40.92.72.83 as permitted sender) client-ip=40.92.72.83;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@hotmail.com header.s=selector1 header.b=sHoMOBxd;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of ozy24us@hotmail.com designates 40.92.72.83 as permitted sender) smtp.mailfrom=ozy24us@hotmail.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hotmail.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ipe4V5SNraX6vf67c3jlFq28BxLri824UsRpGLXcqvtrhrBuuBEqsDXTvh37uacp/FhSu5V4+W5dPY3V4Xt2NS6U9h1snSYY5fXWKZX2fxOrEDr724P1Dy6GF2caBm/VVKSJ2DRdMJtHyI7fc0lOywMBFXKLczskah51zszSgo84kd1D1HQ6nScwp0uUy8Np2iG9Z2q614b1K87c0JSb9f+43HLj8KKB+eUeQAg1/oPfnwYjvx3IYA3tgVIAqLFRP/aKri8k5AQV6+OAdTRiDTgVE8L6BjxwPmI8+bWenXXUNV2tcVLzp4sY5+e+nzYUC+sidOEUCe6fGajzRYof6A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901; h=From:Date:Subject:Message-ID:Content-Type:MIME-Version;
+ bh=cy9zXqYtwn97XH/4qnyKDhD1GvaDg4mY+Dq5dTijmSU=;
+ b=DNDMTR0JH+Hvi8kRfkyIyPEnCTTwZSy7O0r5r7pQX+KQYOhf2MfrQV/dZLirg6VrgUeRoNo7tTi7u2FjTQEhZ3plZB8LBCZLg2NCqyMHz44hGl4/1ej7LGzXj0+wW2PKP/OlOOrMzJxQCDGbTuvKg+Aq/2wsLAn4NTnTjHMARvRpDsOCpAk5O8xH7o444DOO9U7/it7W9Cgx3z1VnY21lTePAOF7fwjw/w8a2J6gvFgaoOUDhefxDyZvIkOROaaTb9b++W714yK2Ha6nv4AXA+mA8c2xh6wCuJ5FiGuxWqUt0Gh3gibQPQ+Opnjlsic7vBbD4xV5IR1+a5FBOus6ug==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hotmail.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=cy9zXqYtwn97XH/4qnyKDhD1GvaDg4mY+Dq5dTijmSU=;
+ b=sHoMOBxdNeR20JyOx7Ebv9WHgbGXvzB30rugjbmJoc1CZhy6X6ZNA6LIXPCRasTaWBDuDSJyEAABTc+7PiGgbSlwtyFLv9sOGijJ4y0X7XYtoyTRcQoeBEgxjy99DC5PxL9tNzKStQOYTED9iTW6zbMRmMAtrzDes4ZuqhArWd3R5jB2+JClqmmZxOZpEpRMpM+4ncQPzJkOWOdlGeFCLuNLV+cTzil3SFWo52hAECrNCqK/6vvEMfFJq00aI3bz1HKgc2ota8vSPMuccS2LI4vvUqSVEwQdatVYTINz0MxTX7x2AaHKajnT3V5FRCpLsfA2MjQCwUDRalFI5CSoaw==
+Received: from VE1PR09MB3357.eurprd09.prod.outlook.com (2603:10a6:803:11c::20)
+ by VI1PR09MB3775.eurprd09.prod.outlook.com (2603:10a6:803:139::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4500.16; Thu, 9 Sep
+ 2021 16:58:48 +0000
+Received: from VE1PR09MB3357.eurprd09.prod.outlook.com
+ ([fe80::a979:17d2:c64b:63e0]) by VE1PR09MB3357.eurprd09.prod.outlook.com
+ ([fe80::a979:17d2:c64b:63e0%7]) with mapi id 15.20.4500.016; Thu, 9 Sep 2021
+ 16:58:48 +0000
+From: e-evil one <ozy24us@hotmail.com>
+To: "  pinkiwinkiwinki555@gmail.com" <pinkiwinkiwinki555@gmail.com>
+Subject: test
+Thread-Topic: test
+Thread-Index: AQHXpZvbc6JL38KpP0qX5G7Yp9/eXw==
+Date: Thu, 9 Sep 2021 16:58:48 +0000
+Message-ID:
+ <VE1PR09MB33578B0DDD355D617D60164BA3D59@VE1PR09MB3357.eurprd09.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-GB
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-tmn: [SkKIicV1wF6qooGpnxnNAj1axN8CU1vC]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 5eaa8cc3-cc37-4c4a-83b4-08d973b317a5
+x-ms-traffictypediagnostic: VI1PR09MB3775:
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ kUH875JU9OXl1WmrVLXLnrFQkVau3fNpkS1Fo0qgVZV1As8Ybgq8ENUTebjZLvC5IwGp7I2N6o8TbhHb4uCuuTCBCY4fxjdVChXGvoHo01mSeGXgeg39oVEtl9OkWy8yMV8xMJIlQpyb7pcuyAapkoPYVbT8BGE2FxlK48zCFLiKcOdt365UXJprmFxaM50mAk76mROTvrw9KFCqr1v+BLtXVzsQCsRVhDsk1qgfF4N0U/H14TvbIepJvXey0vaULlLOm0GklAxhuX4T7OtO0aRex3oaY01P2RldoyHUbHv3g72fDLekc2Pok2u+pvWmv8J9CCCTY1UzGOWVYHa347f4kdEAUUqR7Ds0xiVv8ZeO6Mt5y8ko7Lcm68uRx7nn8et4XesKJ+xu9B80+w2qLVWrDGp1GoU5l/Jlw+sZcMbdDN3dS0kxT32hzIETLg+tdM9KFtSM/9N6FJGl8jTrpnxLRRYceOzGFACWIGCJ1xw=
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ k8g2tdkS0jd3FhHnPaocf3lF0cqkkGaB1PQbuy7mJmr2HxeTTmV2E7wXQgixX4NaXoXAku38vd/fNwjPri1j5fTNvwRugqWQas5Sr2IK23+m8s7UCSu/rlo6mhTInGpvd69tpa5xPIva5j28n5u36A==
+x-ms-exchange-transport-forked: True
+Content-Type: multipart/alternative;
+	boundary="_000_VE1PR09MB33578B0DDD355D617D60164BA3D59VE1PR09MB3357eurp_"
+MIME-Version: 1.0
+X-OriginatorOrg: sct-15-20-3174-20-msonline-outlook-72e6e.templateTenant
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: VE1PR09MB3357.eurprd09.prod.outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5eaa8cc3-cc37-4c4a-83b4-08d973b317a5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Sep 2021 16:58:48.1639
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR09MB3775
+
+--_000_VE1PR09MB33578B0DDD355D617D60164BA3D59VE1PR09MB3357eurp_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+
+Mail send
+Sent from Mail<https://go.microsoft.com/fwlink/?LinkId=3D550986> for Window=
+s
+
+
+--_000_VE1PR09MB33578B0DDD355D617D60164BA3D59VE1PR09MB3357eurp_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:w=3D"urn:sc=
+hemas-microsoft-com:office:word" xmlns:m=3D"http://schemas.microsoft.com/of=
+fice/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+.MsoChpDefault
+	{mso-style-type:export-only;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style>
+</head>
+<body lang=3D"RO" link=3D"blue" vlink=3D"#954F72" style=3D"word-wrap:break-=
+word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Mail send</p>
+<p class=3D"MsoNormal">Sent from <a href=3D"https://go.microsoft.com/fwlink=
+/?LinkId=3D550986">
+Mail</a> for Windows</p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</body>
+</html>
+
+--_000_VE1PR09MB33578B0DDD355D617D60164BA3D59VE1PR09MB3357eurp_--

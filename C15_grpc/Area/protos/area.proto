@@ -1,0 +1,22 @@
+syntax= "proto3";
+
+package C15_1_GRPC;
+
+service AreaCalculator {
+  rpc CalculateArea (AreaParams) returns (AreaResult) {}
+  rpc CalculateSquare(SquareParams) returns(AreaResult){}
+}
+
+message AreaParams {
+  int32 length=1;
+  int32 width=2;
+
+}
+
+message AreaResult {
+  float result=1;
+}
+
+message SquareParams{
+  int32 side=1;
+}
